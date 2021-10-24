@@ -137,7 +137,7 @@ function my_speech_creation(myspeech){
 
   // Set the text property with the value of the textarea
   speech.text = myspeech;
-  speech.pitch=0.3;
+  speech.pitch=1;
 
   // Start Speaking
   
