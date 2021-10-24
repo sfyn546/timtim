@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Music Equalizer Effect</title>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            .container {
+                height: 100vh;
+                display:block;
+                align-items: center;
+                justify-content: center;
+                background-color: #191919;
+            }
+
+            .equalizer {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                height: 400px;
+                width: 600px;
+                background-color: #191919;
+                padding: 1rem;
+            }
+
+            .bar {
+                display: inline-block;
+                width: 25px;
+                background-color: #aaaaaa;
+                margin: 0 1rem;
+            }
+
+            .btn{
+                margin: 3rem;
+                margin-left:15rem;
+                height:100px;
+                width:100px;
+                background-color: rgb(53, 250, 53);
+                border-radius: 100px;
+                color:antiquewhite;
+                font-size: large;
+
+            }
+            .emoticon{
+                background-color: #191919;
+                border-radius: 20rem;
+                
+            }
+            #rou{
+                border-radius: 20rem;
+            }
+
+        </style>
+    </head>
+    <body onload="hide_equi()">
+
+
+        <div class="container">
+
+            <div id="myb" class="equalizer">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+                <div id="bar4" class="bar"></div>
+                <div id="bar5" class="bar"></div>
+                <div id="bar6" class="bar"></div>
+                <div id="bar7" class="bar"></div>
+                <div id="bar8" class="bar"></div>
+
+                <div class="emoticon"><img id="rou" src="https://www.smileysapp.com/gif-emoji/listening-music.gif" alt="listening-music" width="100%"></div>
+                <div id="transcript">
+                </div>
+            </div>
+
+            <script src="app.js"></script>
+            
+            <script>
+                
+                animate(document.getElementById('bar1'), [350, 250, 310, 150]);
+                animate(document.getElementById('bar2'), [50, 150, 100, 350]);
+                animate(document.getElementById('bar3'), [300, 200, 250, 100]);
+                animate(document.getElementById('bar4'), [375, 145, 215, 95]);
+                animate(document.getElementById('bar5'), [75, 115, 80, 235]);
+                animate(document.getElementById('bar6'), [175, 45, 195, 115]);
+                animate(document.getElementById('bar7'), [215, 145, 300, 95]);
+                animate(document.getElementById('bar8'), [55, 345, 145, 250]);
+
+                function animate(element, heights) {
+                    let currentHeight = 0;
+                    let loop = 0;
+
+                    setInterval(function() {
+                        if (currentHeight === heights[loop]) {
+                            loop++;
+
+                            if (!heights[loop]) {
+                                loop = 0;
+                            }
+                        } else {
+                            if (currentHeight > heights[loop]) {
+                                currentHeight--;
+                            } else {
+                                currentHeight++;
+                            }
+
+                            element.style.height = currentHeight + 'px';
+                        }
+                    }, 5);
+                }
+                
+
+                function hide_equi(){
+
+                    var elem = document.getElementById("ack");
+                if (elem.value=="TALK") 
+                {
+                    document.getElementById("myb").style.visibility="visible";
+                    document.getElementById("ackb").innerHTML = "STOP";
+                    elem.value="STOP";
+                    document.getElementById("ack").style.backgroundColor="red";
+                    recognition.start();
+                    
+                }
+                    else {
+                        elem.value = "TALK";
+                        document.getElementById("ackb").innerHTML = "TALK";
+                        document.getElementById("myb").style.visibility="hidden";
+                        document.getElementById("ack").style.backgroundColor="rgb(53, 250, 53)";
+                        recognition.stop();
+                }
+                }
+            </script>
+
+                <button id="ack" class="btn success" onclick="hide_equi()" value="STOP"><p id="ackb">TALK</p></button>
+            
+            
+        </div>
+        
+        
+    </body>
+</html>
