@@ -133,7 +133,7 @@ function my_speech_creation(myspeech){
     //console.log(voices);
 
     //speech.voice=voices[2];
-    speech.rate=1.4;
+    speech.rate=1;
 
   // Set the text property with the value of the textarea
   speech.text = myspeech;
