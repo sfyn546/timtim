@@ -1,0 +1,30 @@
+0 bed
+1 chair
+2 sofa
+3 swivelchair
+4 table
+5 backpack
+6 bathtub
+7 beer mug
+8 bread maker
+9 bulldozer
+10 butterfly
+11 cake
+12 calculator
+13 car tire
+14 cockroach
+15 cofee mug
+16 keyboard
+17 monitor
+18 mouse
+19 hat
+20 ring
+21 dice
+22 dog
+23 goat
+24 grapes
+25 knife
+26 iris
+27 person
+28 tomato
+29 tshirt
