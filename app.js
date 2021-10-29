@@ -55,10 +55,11 @@ recognition.addEventListener("result", (e) =>{
             //}
         }
 
-        else if(transcript.includes("pet")){
-            window.open('timtim/ainak/index.html')
+        else if(transcript.includes("ayenak")){
+            window.open('https://sfyn546.github.io/timtim/ainak/index.html');
         }
         else if(transcript.includes("activate")){
+            my_speech_creation("Activating ayenak ,Kindly wait for a moment");
         window.open("https://sfyn546.github.io/timtim/ainak/index.html");
         }
 
