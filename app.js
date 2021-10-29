@@ -58,6 +58,9 @@ recognition.addEventListener("result", (e) =>{
         else if(transcript.includes("pet")){
             window.open('timtim/ainak/index.html')
         }
+        else if(transcript.includes("activate")){
+        window.open("https://sfyn546.github.io/timtim/ainak/index.html");
+        }
 
         else if(transcript.includes("date")){
             var d = new Date();
